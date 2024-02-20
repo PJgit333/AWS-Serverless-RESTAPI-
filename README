@@ -1,0 +1,49 @@
+Step 1: Install Serverless Framework
+First, ensure you have Node.js and npm installed. Then, install the Serverless Framework globally:
+	
+	npm install -g serverless
+
+
+Step 2: Create a New Serverless Project
+Create a new directory for your project and navigate into it:
+
+	mkdir serverless-rest-api
+	cd serverless-rest-api
+
+Initialize a new Serverless project:
+
+	serverless create --template aws-python3 --name my-rest-api
+	cd my-rest-api
+
+This creates a new Serverless project using the Python 3 runtime.
+
+Step 3: Define API Endpoints
+Open the serverless.yaml file and define your API endpoints
+	
+	serverless.yaml
+	
+	In this configuration:
+
+	service: Specifies the name of your service.
+	provider: Specifies AWS as the cloud provider and sets the Python 3.8 runtime.
+	functions: Defines your Lambda functions.
+	-> hello: Specifies the function name and handler. It will handle HTTP GET requests to the /hello endpoint.
+
+Step 4: Implement Lambda Handler
+Create a Python script for the Lambda handler. Let's define a simple hello function:
+
+	handler.py
+
+Step 5: Deploy the Serverless Project
+Deploy your Serverless project to AWS:
+
+	serverless deploy
+
+Step 6: Test the API
+Once deployed, you can test your API using the provided URL. For example, if your endpoint is /hello, you can make a GET request to:
+
+	https://<api-id>.execute-api.<region>.amazonaws.com/dev/hello
+
+Replace <api-id> with your API Gateway ID and <region> with the AWS region where you deployed your API.
+
+
